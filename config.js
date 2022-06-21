@@ -1,9 +1,9 @@
 const config={
     db: {
-        host: "",
-        user: "",
-        password: "",
-        database: "",
+        host: "172.16.112.118",
+        user: "root",
+        password: "rootpassword",
+        database: "sampledb",
     },
     listPerPage: 10,
 };
