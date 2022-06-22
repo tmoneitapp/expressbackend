@@ -5,6 +5,7 @@ const programmingLanguages = require('../services/programmingLanguages');
 /* GET programming languages. */
 router.get('/', async function(req, res, next) {
   try {
+    res.set('Access-Control-Allow-Origin','*');
     res.json(await programmingLanguages.getMultiple(req.query.page));
   } catch (err) {
     console.error(`Error while getting programming languages `, err.message);
