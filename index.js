@@ -3,8 +3,20 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 const programmingLanguagesRouter = require("./routes/programmingLanguages");
+const corsOptions ={
+  origin: function(origin, callback){
+    if (whitelist.indexOf(origin)!==-1){
+      callback(null,true)
+    }
+    else{
+      callback(null,true) //trick CORS
+    }
+  },
+  credentials: true
+}
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(
   express.urlencoded({
     extended: true,
