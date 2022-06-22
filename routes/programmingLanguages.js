@@ -8,7 +8,8 @@ router.get('/', async function(req, res, next) {
     res.set('Access-Control-Allow-Origin','http://app-single-repository.apps.ocp.tmrnd.com.my');
     res.set('Access-Control-Allow-Credentials','true');
     res.set('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
-    res.json(await programmingLanguages.getMultiple(req.query.page));
+    //res.json(await programmingLanguages.getMultiple(req.query.page));
+    res.json(await programmingLanguages.getMultiple());
   } catch (err) {
     console.error(`Error while getting programming languages `, err.message);
     next(err);
