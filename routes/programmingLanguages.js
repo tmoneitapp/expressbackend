@@ -5,7 +5,7 @@ const programmingLanguages = require('../services/programmingLanguages');
 /* GET programming languages. */
 router.get('/', async function(req, res, next) {
   try {
-    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Origin','http://app-single-repository.apps.ocp.tmrnd.com.my');
     res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
     res.json(await programmingLanguages.getMultiple(req.query.page));
   } catch (err) {
