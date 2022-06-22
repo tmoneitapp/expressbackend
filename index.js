@@ -18,6 +18,7 @@ app.use("/programming-languages", programmingLanguagesRouter);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
+  res.set('Access-Control-Allow-Origin','*');
   res.status(statusCode).json({ message: err.message });
   return;
 });
