@@ -1,6 +1,6 @@
 const config={
     db: {
-        host: "172.16.96.89",
+        host: "172.16.112.118",
         user: "root",
         password: "rootpassword",
         database: "sampledb",
