@@ -81,5 +81,5 @@ module.exports = {
   getMultiple,
   create,
   update,
-  remove,
+  remove
 }
