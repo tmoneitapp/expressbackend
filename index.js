@@ -30,9 +30,8 @@ app.use("/programming-languages", programmingLanguagesRouter);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
-  res.header('Access-Control-Allow-Origin','http://app-single-repository.apps.ocp.tmrnd.com.my');
-  res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
-
+  // res.header('Access-Control-Allow-Origin','http://app-single-repository.apps.ocp.tmrnd.com.my');
+  // res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
   res.status(statusCode).json({ message: err.message });
   return;
 });
