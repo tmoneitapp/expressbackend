@@ -3,14 +3,14 @@ const helper = require('../helper');
 const config = require('../config');
 
 async function getMultiple(){
-  const rows = await db.query(
+  return await db.query(
     `SELECT id, name, released_year, githut_rank, pypl_rank, tiobe_rank 
      FROM programming_languages`
   );
-  const data = helper.emptyOrRows(rows);
-  return {
-    data
-  }
+  // const data = helper.emptyOrRows(rows);
+  // return {
+  //   data
+  // }
 }
 
 // async function getMultiple(page = 1){
