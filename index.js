@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('cors');
+// const cors = require('cors');
 const app = express();
 const port = 3000;
 const programmingLanguagesRouter = require("./routes/programmingLanguages");
@@ -15,8 +15,8 @@ const programmingLanguagesRouter = require("./routes/programmingLanguages");
 //   credentials: true
 // }
 
+//app.use(cors());
 app.use(express.json());
-app.use(cors());
 app.use(
   express.urlencoded({
     extended: true,
@@ -30,8 +30,6 @@ app.use("/programming-languages", programmingLanguagesRouter);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
-  // res.header('Access-Control-Allow-Origin','http://app-single-repository.apps.ocp.tmrnd.com.my');
-  // res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
   res.status(statusCode).json({ message: err.message });
   return;
 });
